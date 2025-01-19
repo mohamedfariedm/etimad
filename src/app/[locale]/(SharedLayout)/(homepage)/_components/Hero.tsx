@@ -1,47 +1,76 @@
-import AiButton from "@/components/Animations/AiButton";
-import AnimatedInputText from "@/components/Animations/AnimatedInputText";
-import { Tiles } from "@/components/Animations/Tiles";
-import { Container } from "@/components/Layout";
-import { Button } from "@/components/ui/button";
+import { Arrow } from "@/components/Animations/arrowDown";
 import { TFunction } from "i18next";
 import React from "react";
-import { FiPlayCircle } from "react-icons/fi";
-import AnimatedInputTextAndAiButton from "./AnimatedInputTextAndAiButton";
+
 
 function Hero({ t }: { t: TFunction }) {
   return (
-    <section className="w-full min-h-screen -[1220px] lg:h -[1160px] -translate-y-[136px] -mb-[136px]  relative pt-[calc(136px+80px)]">
-      <div className={"absolute top-0 left-0 h-full w-full z-10"}>
-        <Tiles rows={30} cols={20} className="opacity-30" />
-      </div>
-      <video
-        src="/assets/videos/auth_animation.mp4"
-        className="w-full h-full object-cover   select-none absolute inset-0"
-        autoPlay
-        loop
-        muted
-      />
-      <Container className="flex flex-col items-center relative z- 10">
-        <h1 className=" text-center text-4xl md:text-6xl font-semibold text -balance text-text-brand-primary-900 leading-[44px] md:leading-[72px] w-full lg:w-5/6 animate-fade-down relative z-30">
-          {t("hero.title")}
-        </h1>
-        <h2 className="text-center text-text-brand-secondary-700 text -balance text-lg md:text-xl leading-7 md:leading-[30px] mt-4 md:mt-6 w-full lg:w-4/6 animate-fade-down animate-delay-300 relative z-30">
-          {t("hero.subtitle")}
-        </h2>
-        {/*  <Button className="mt-9 w-full max-w-80 md:w-[243px] h-11 md:h-[56px] rounded-lg md:rounded-[10px] md:text-lg  font-semibold leading-normal md:leading-7 animate-fade-down animate-delay-500">
-          {t("hero.cta")}
-        </Button> */}
-        <AnimatedInputTextAndAiButton className="w-full lg:w-[55%] lg:px-5 mt-6 md:mt-10 mb-5 animate-fade-up animate-delay-500 relative z-30" />
+<div className="w-full xl:w-[1440px] xl:h-[1041px] mx-auto my-0">
+  <div className="flex w-full  xl:w-[686px] flex-col gap-[64px] items-center flex-nowrap relative z-[1] mt-[236px] mx-auto">
+    <div className="flex flex-col gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
+      <span className="flex w-full xl:w-[686px] xl:h-[232px] justify-center items-start self-stretch shrink-0  text-[64px] font-bold leading-[116.48px] text-[#fff] relative text-center z-[3]">
+        تمويل يلبي احتياجاتك بأبسط الخطوات
+      </span>
+      <span className="flex lg:w-[546px] h-[64px] justify-center items-start shrink-0  text-[16px] font-medium leading-[32px] text-[#f8fbfc] relative text-center z-[4]">
+        نوفر لك خيارات تمويل شخصية وتجارية بمرونة عالية، سرعة في الإجراءات،
+        وشروط مُيسرة تناسب احتياجاتك.
+      </span>
+    </div>
+    <div className="flex w-[350px] gap-[24px] items-start shrink-0 flex-nowrap relative z-[5]">
+    <button className="flex w-[163px] pt-[12px] pr-[46px] pb-[12px] pl-[46px] gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[16px] border-solid border border-[#5d9d9f] relative z-[8] pointer">
+        <span className="flex w-[39px] h-[21px] justify-center items-start shrink-0 basis-auto  text-[14px] font-medium leading-[21px] text-[#fff] relative text-center whitespace-nowrap z-[9]">
+          المزيد
+        </span>
+      </button>
+      <button className="flex w-[163px] pt-[12px] pr-[46px] pb-[12px] pl-[46px] gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#5d9d9f] rounded-[16px] border-none relative z-[6] pointer">
+        <span className="flex w-[71px] h-[21px] justify-center items-start shrink-0 basis-auto  text-[14px] font-medium leading-[21px] text-[#fff] relative text-center whitespace-nowrap z-[7]">
+          طلب تمويل
+        </span>
+      </button>
 
-        {/*   <video
-          src="/assets/videos/homepage-video.mp4"
-          className="mt-12 w-full md:w-3/4 h-[470px]  rounded-2xl shadow overflow-hidden object-cover  select-none  animate-fade-up animate-delay-700"
-          autoPlay
-          loop
-          muted
-        /> */}
-      </Container>
-    </section>
+    </div>
+    <div className="flex w-[291.75px] flex-col gap-[16px] items-center shrink-0 flex-nowrap relative z-10">
+      <span className="h-[25px] shrink-0 basis-auto  text-[14px] font-normal leading-[25px] text-[#90bbbd] relative text-left whitespace-nowrap z-[11]">
+        قم بتنزيل التطبيق الان
+      </span>
+      <div className="flex w-[291.75px] gap-[14px] items-center shrink-0 flex-nowrap relative z-[12]">
+        <button className="w-[130.125px] h-[44px] shrink-0 bg-[url(/assets/images/hero/group.png)] bg-contain bg-no-repeat border-none relative overflow-hidden z-[13] pointer" />
+        <button className="w-[147.125px] h-[44px] shrink-0 bg-[url(/assets/images/hero/Badge.svg)] bg-cover bg-no-repeat border-none relative overflow-hidden z-[13] pointer" />
+
+      </div>
+    </div>
+  </div>
+  <div className="flex w-[64px] h-[32px] pt-[16px]  pb-[16px]  flex-col gap-[8px] items-center flex-nowrap  relative overflow-hidden z-[29] mt-[35px] mb-0">
+  </div>
+
+  <div className="flex w-full xl:w-[1152px] h-[56px] justify-between items-center relative z-[17] mt-[17px]  mb-0 mx-auto">
+    <div className="flex w-[248px] gap-[32px] items-center shrink-0 flex-nowrap relative z-[17]">
+    <div className="flex w-[144px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[24]">
+    <div className="flex w-[64px] h-[46px] pt-[11px] pr-[20px] pb-[11px] pl-[20px] gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#5d9d9f] rounded-[32px] relative z-[27]">
+          <div className="w-[24px] h-[24px] shrink-0 bg-[url(/assets/images/hero/arrow-right-01.svg)] bg-cover bg-no-repeat relative z-[28]" />
+        </div>
+        <div className="flex w-[64px] h-[46px] pt-[11px] pr-[20px] pb-[11px] pl-[20px] gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] border-solid border border-[#5d9d9f] relative z-[25] pointer">
+          <div className="w-[24px] h-[24px] shrink-0 bg-[url(/assets/images/hero/arrow-left-01.svg)] bg-cover bg-no-repeat relative z-[26]" />
+        </div>
+
+      </div>
+      <div className="flex w-[72px] gap-[8px] items-center shrink-0 flex-nowrap relative z-[18]">
+        <div className="w-[8px] h-[8px] shrink-0 bg-[#fff] rounded-[24px] relative z-[19]" />
+        <div className="w-[8px] h-[8px] shrink-0 bg-[#fff] rounded-[24px] opacity-40 relative z-20" />
+        <div className="w-[8px] h-[8px] shrink-0 bg-[#fff] rounded-[24px] opacity-40 relative z-[21]" />
+        <div className="w-[8px] h-[8px] shrink-0 bg-[#fff] rounded-[24px] opacity-40 relative z-[22]" />
+        <div className="w-[8px] h-[8px] shrink-0 bg-[#fff] rounded-[24px] opacity-40 relative z-[23]" />
+      </div>
+
+    </div>
+    <div className="w-[56px] h-[56px]  flex justify-center items-center  relative z-[16]" >
+<Arrow/>
+
+    </div>
+  </div>
+  <div className="w-[1440px] h-[1200px] sm:h-[1041px] bg-[url(/assets/images/hero/mainbanner.svg)] bg-cover bg-no-repeat absolute top-0 left-1/2 translate-x-[-50%] translate-y-0" />
+</div>
+
   );
 }
 
