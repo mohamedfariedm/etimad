@@ -4,12 +4,12 @@ import { Container } from "@/components/Layout";
 import { Separator } from "@/components/ui/separator";
 import {
   Blogs,
+  EasyWay,
   Hero,
   Testimonials,
   Values,
 } from "./_components";
 import { Features } from "@/components/Shared";
-import { StartFreeTrial } from "@/components/Main";
 
 const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
 
@@ -18,6 +18,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <section className="min-h-screen ">
       <Hero t={t}/>
+      <EasyWay t={t}/>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { Footer, Header, TopBanner } from "@/components/Layout";
+import { Footer, Header} from "@/components/Layout";
 import type { Metadata } from "next";
 
 /* export const metadata: Metadata = {
@@ -15,9 +15,12 @@ export default async function Layout({
 }) {
   return (
     <>
+    <div className="overflow-x-hidden">
       <Header locale={locale} />
       {children}
       <Footer locale={locale} />
+
+    </div>
     </>
   );
 }
