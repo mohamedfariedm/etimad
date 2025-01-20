@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Container } from "../Layout";
 import { Button } from "../ui/button";
-import AnimatedBorderTrail from "../Animations/AnimatedBorderTrail";
+// import AnimatedBorderTrail from "../Animations/AnimatedBorderTrail";
 import Link from "next/link";
 import { Heading, SubHeading } from "../Main";
 
