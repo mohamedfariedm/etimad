@@ -6,6 +6,7 @@ import {
   Blogs,
   EasyWay,
   Hero,
+  Products,
   Testimonials,
   Values,
 } from "./_components";
@@ -18,7 +19,12 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <section className="min-h-screen ">
       <Hero t={t}/>
+      <div className="flex flex-col gap-[136px]">
       <EasyWay t={t}/>
+      <Products t={t}/>
+
+
+      </div>
     </section>
   );
 };
