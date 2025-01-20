@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import AnimatedBackgroundBeams from "../Animations/AnimatedBackgroundBeams";
+// import AnimatedBackgroundBeams from "../Animations/AnimatedBackgroundBeams";
 
 function ValueCard({
   value,
