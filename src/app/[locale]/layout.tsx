@@ -6,6 +6,8 @@ import "../../styles/globals.css";
 
 
 
+
+
 export const metadata: Metadata = {
   title: "Eitmad",
   description: "Eitmad app",
@@ -31,7 +33,9 @@ export default async function RootLayout({
       lang={locale}
       dir={dir(locale)}
     >
-      <body>
+      <body
+      style={{ fontFamily: 'var(--font-bukra)' }}
+      >
         <main className="w-full">
           <GlobalProvider locale={locale}>{children}</GlobalProvider>
         </main>
