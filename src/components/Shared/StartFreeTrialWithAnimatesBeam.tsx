@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Container } from "../Layout";
 import { Button } from "../ui/button";
-// import AnimatedBorderTrail from "../Animations/AnimatedBorderTrail";
 import Link from "next/link";
 import { Heading, SubHeading } from "../Main";
 
@@ -27,16 +26,7 @@ async function StartFreeTrial({
       )}
     >
       <Container className="">
-        <AnimatedBorderTrail
-          className="rounded-3xl  bg-transparent w-full"
-          contentClassName={cn(
-            "",
-            withImage
-              ? "bg-background-secondary rounded-3xl flex flex-col lg:flex-row items-center justify-between gap-9 min-h-[800px] lg:min-h-[400px]"
-              : ""
-          )}
-          trailColor="white"
-        >
+        
           <div
             className={cn(
               "",
@@ -71,7 +61,6 @@ async function StartFreeTrial({
               />
             </div>
           )}
-        </AnimatedBorderTrail>
       </Container>
     </div>
   );

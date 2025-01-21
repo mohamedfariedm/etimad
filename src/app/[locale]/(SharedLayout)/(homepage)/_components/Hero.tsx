@@ -68,7 +68,7 @@ function Hero({ t }: { t: TFunction }) {
 
     </div>
   </div>
-  <div className="w-full xl:w-[1440px] h-[1200px] sm:h-[1041px] bg-[url(/assets/images/hero/mainbanner.svg)] bg-cover bg-no-repeat absolute top-0 left-1/2 translate-x-[-50%] translate-y-0" />
+  <div className="w-full xl:w-full h-[1200px] sm:h-[1041px] bg-[url(/assets/images/hero/mainbanner.svg)] bg-cover bg-no-repeat absolute top-0 left-1/2 translate-x-[-50%] translate-y-0" />
 </div>
 
   );
