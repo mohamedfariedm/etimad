@@ -19,7 +19,6 @@ export function generateStaticParams() {
 }
 
 
-
 export default async function RootLayout({
   children,
   params: { locale },
@@ -27,10 +26,12 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-
   return (
-    <html lang={locale} dir={dir(locale)} className={"bukra"} >
-      <body >
+    <html
+      lang={locale}
+      dir={dir(locale)}
+    >
+      <body>
         <main className="w-full">
           <GlobalProvider locale={locale}>{children}</GlobalProvider>
         </main>
@@ -38,3 +39,4 @@ export default async function RootLayout({
     </html>
   );
 }
+
