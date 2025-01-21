@@ -29,8 +29,8 @@ export default async function RootLayout({
 }>) {
 
   return (
-    <html lang={locale} dir={dir(locale)}>
-      <body className={"bukra"}>
+    <html lang={locale} dir={dir(locale)} className={"bukra"} >
+      <body >
         <main className="w-full">
           <GlobalProvider locale={locale}>{children}</GlobalProvider>
         </main>
