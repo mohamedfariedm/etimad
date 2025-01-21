@@ -50,6 +50,7 @@ async function StartFreeTrial({
             </Button>
           </div>
 
+
           {withImage && (
             <div className="w-full h-[350px] lg:w-[45%] lg:h-[400px]  relative overflow-hidden shrink-0 self-end">
               <Image
