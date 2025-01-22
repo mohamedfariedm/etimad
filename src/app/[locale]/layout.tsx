@@ -6,8 +6,6 @@ import "../../styles/globals.css";
 
 
 
-
-
 export const metadata: Metadata = {
   title: "Eitmad",
   description: "Eitmad app",
@@ -21,6 +19,7 @@ export function generateStaticParams() {
 }
 
 
+
 export default async function RootLayout({
   children,
   params: { locale },
@@ -28,19 +27,14 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+
   return (
-    <html
-      lang={locale}
-      dir={dir(locale)}
-    >
-      <body
-      style={{ fontFamily: 'var(--font-bukra)' }}
-      >
-        <main className="w-full">
+    <html lang={locale} dir={dir(locale)}>
+      <body className={"bukra"}>
+        <main className="w-full bukra">
           <GlobalProvider locale={locale}>{children}</GlobalProvider>
         </main>
       </body>
     </html>
   );
 }
-
