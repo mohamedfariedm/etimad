@@ -7,6 +7,9 @@
   src: url('/fonts/29LTBukra-regular.otf') format('opentype');
   font-style: normal;
 }
+.bukra {
+  font-family: 'bukra', sans-serif;
+}
 
 @font-face {
   font-family: 'bukra-semi-bold';
@@ -15,9 +18,7 @@
   font-style: normal;
 }
 
-.bukra {
-  font-family: 'bukra', sans-serif;
-}
+
 .bukra-semi-bold {
   font-family: 'bukra-semi-bold', sans-serif;
 }
