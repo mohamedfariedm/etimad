@@ -8,7 +8,7 @@ function Hero({ t }: { t: TFunction }) {
 <div className="w-full xl:w-[1440px] h-[1200px] sm:h-[1041px] mx-auto my-0">
   <div className="flex w-full  xl:w-[686px] flex-col gap-[64px] items-center flex-nowrap relative z-[1] mt-[236px] mx-auto">
     <div className="flex flex-col gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
-      <span className="flex w-full xl:w-[686px] xl:h-[232px] justify-center items-start self-stretch shrink-0  text-[64px] font-bold leading-[116.48px] text-[#fff] relative text-center z-[3]">
+      <span className="flex w-full bukra-semi-bold xl:w-[686px] xl:h-[232px] justify-center items-start self-stretch shrink-0  text-[64px] font-bold leading-[116.48px] text-[#fff] relative text-center z-[3]">
         تمويل يلبي احتياجاتك بأبسط الخطوات
       </span>
       <span className="flex lg:w-[546px] h-[64px] justify-center items-start shrink-0  text-[16px] font-medium leading-[32px] text-[#f8fbfc] relative text-center z-[4]">

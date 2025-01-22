@@ -12,7 +12,7 @@ function EasyWay({ t }: { t: TFunction }) {
         className="w-[176px] h-[3px] shrink-0 bg-cover bg-no-repeat rounded-[4px] relative z-[2]"
         style={{ backgroundImage: "url(/assets/images/eassyway/line.svg)" }}
       />
-      <span className="flex w-full xl:w-[500px] xl:h-[58px] justify-center items-start shrink-0 basis-auto  text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center xl:whitespace-nowrap z-[3]">
+      <span className="flex w-full bukra-semi-bold xl:w-[500px] xl:h-[58px] justify-center items-start shrink-0 basis-auto  text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center xl:whitespace-nowrap z-[3]">
         تجربة تمويل سهلة، سريعة، وآمنة
       </span>
       <div

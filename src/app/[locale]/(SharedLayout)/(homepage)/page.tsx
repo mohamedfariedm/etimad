@@ -3,8 +3,11 @@ import { auth } from "@/auth";
 import { Container } from "@/components/Layout";
 import { Separator } from "@/components/ui/separator";
 import {
+  AboutApp,
   Blogs,
+  Calculate,
   EasyWay,
+  Faq,
   Hero,
   Products,
   Testimonials,
@@ -22,6 +25,11 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
       <div className="flex flex-col gap-[136px]">
       <EasyWay t={t}/>
       <Products t={t}/>
+      <Calculate t={t}/>
+      <AboutApp t={t}/>
+      <Faq/>
+
+
 
 
       </div>

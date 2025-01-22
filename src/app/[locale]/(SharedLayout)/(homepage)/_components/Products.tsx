@@ -5,13 +5,13 @@ import React from "react";
 
 function Products({ t }: { t: TFunction }) {
   return (
-<div className="main-container flex xl:w-[1152px] flex-col gap-[128px] items-start flex-nowrap relative mx-auto my-0">
+<div className="main-container w-full flex xl:w-[1152px] flex-col gap-[128px] items-start flex-nowrap relative mx-auto my-0">
   <div className="flex gap-[24px] justify-center items-center self-stretch shrink-0 flex-nowrap relative">
     <div
       className="w-[176px] h-[3px] shrink-0 bg-cover bg-no-repeat rounded-[4px] relative z-[1]"
       style={{ backgroundImage: "url(/assets/images/eassyway/line.svg)" }}
       />
-    <span className="flex w-[227px] h-[58px] justify-center items-start shrink-0 basis-auto  text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center whitespace-nowrap z-[2]">
+    <span className="flex bukra-semi-bold w-[227px] h-[58px] justify-center items-start shrink-0 basis-auto  text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center whitespace-nowrap z-[2]">
       منتجات التمويل
     </span>
     <div
@@ -40,7 +40,7 @@ function Products({ t }: { t: TFunction }) {
           className="flex pt-[16px] pr-0 pb-[16px] pl-0 flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative"
           style={{ zIndex: 6 + index * 10 }}
         >
-          <span className="h-[30px] self-stretch shrink-0 basis-auto  text-[20px] font-semibold leading-[30px] text-[#46cbcf] relative text-center whitespace-nowrap">
+          <span className="h-[30px] self-stretch shrink-0 basis-auto  text-[20px] font-semibold leading-[30px] bg-gradient-to-bl from-[#5D9D9F]  to-[#3EDADF] bg-clip-text text-transparent relative text-center whitespace-nowrap">
             {index === 0 && "السفر"}
             {index === 1 && "شباب طويق"}
             {index === 2 && "الاستقدام"}
