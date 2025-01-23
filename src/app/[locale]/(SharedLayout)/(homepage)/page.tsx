@@ -6,10 +6,13 @@ import {
   AboutApp,
   Blogs,
   Calculate,
+  Certifications,
   EasyWay,
   Faq,
   Hero,
+  Numbers,
   Products,
+  Tamwilk,
   Testimonials,
   Values,
 } from "./_components";
@@ -28,6 +31,11 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
       <Calculate t={t}/>
       <AboutApp t={t}/>
       <Faq/>
+      <Numbers t={t}/>
+      <Tamwilk t={t}/>
+      <Certifications t={t}/>
+
+
 
 
 
