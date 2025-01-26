@@ -1,8 +1,7 @@
 import initTranslations from "@/app/i18n";
 import React from "react";
+import MissionAndVision from "./_components/MissionAndVision";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
-import ContactForm from "./_components/ContactForm";
-import LeftPart from "./_components/LeftPart";
 
 async function page({ params: { locale } }: { params: { locale: string } }) {
   const { t } = await initTranslations(locale, ["contactUs"]);
@@ -10,14 +9,8 @@ async function page({ params: { locale } }: { params: { locale: string } }) {
   return (
 <>
 <BreadCrumbComponent/>
-<div className="main-container flex w-[1148px] gap-[64px] justify-center items-start flex-nowrap relative mx-auto my-0">
-<ContactForm/>
-<LeftPart/>
-
-
-  </div>
+<MissionAndVision t={t}/>
 </>
-
   );
 }
 

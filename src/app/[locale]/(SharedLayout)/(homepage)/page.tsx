@@ -25,7 +25,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <section className="min-h-screen ">
       <Hero t={t}/>
-      <div className="flex flex-col gap-[136px]">
+      <div className="flex flex-col gap-[136px] px-5 sm:px-0">
       <EasyWay t={t}/>
       <Products t={t}/>
       <Calculate t={t}/>
@@ -34,12 +34,6 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
       <Numbers t={t}/>
       <Tamwilk t={t}/>
       <Certifications t={t}/>
-
-
-
-
-
-
       </div>
     </section>
   );
