@@ -197,7 +197,7 @@
     --border-brand-alt: #333741;
     --input: 0 0% 14.9%;
     --disabled: #85888e;
-    --placeholder: #85888e;
+    --placeholder: black;
     --ring: #544cfc;
 
     --chart-1: 220 70% 50%;

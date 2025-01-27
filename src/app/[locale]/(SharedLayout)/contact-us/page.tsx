@@ -10,7 +10,7 @@ async function page({ params: { locale } }: { params: { locale: string } }) {
   return (
 <>
 <BreadCrumbComponent/>
-<div className="main-container flex w-[1148px] gap-[64px] justify-center items-start flex-nowrap relative mx-auto my-0">
+<div className="main-container flex flex-col xl:flex-row w-full  xl:w-[1148px] gap-[64px] justify-center items-start flex-nowrap relative mx-auto my-0">
 <ContactForm/>
 <LeftPart/>
 

@@ -84,7 +84,7 @@ function ContactForm() {
                 <input
                   {...methods.register("firstName")}
                   placeholder="الاسم الأول"
-                  className="outline-none w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[999px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                  className="outline-none text-black w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] placeholder:text-[#BABFC2] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
                 />
                 {methods.formState.errors.firstName && (
                   <div className="text-red-500 text-[12px]">
@@ -100,7 +100,7 @@ function ContactForm() {
                 <input
                   {...methods.register("lastName")}
                   placeholder="الاسم الأخير"
-                  className="outline-none w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[999px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                  className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
                 />
                 {methods.formState.errors.lastName && (
                   <div className="text-red-500 text-[12px]">
@@ -118,7 +118,7 @@ function ContactForm() {
                 {...methods.register("email")}
                 type="email"
                 placeholder="you@company.com"
-                className="outline-none w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[999px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
               />
               {methods.formState.errors.email && (
                 <div className="text-red-500 text-[12px]">
@@ -134,7 +134,7 @@ function ContactForm() {
               <input
                 {...methods.register("phone")}
                 placeholder="+966 5XXXXXXXX"
-                className="outline-none w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[999px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
               />
               {methods.formState.errors.phone && (
                 <div className="text-red-500 text-[12px]">
@@ -150,7 +150,7 @@ function ContactForm() {
               <textarea
                 {...methods.register("message")}
                 placeholder="اترك لنا رسالة..."
-                className="outline-none w-full xl:w-[496px] h-[90px] bg-[#f4f4f4] rounded-[8px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                className="outline-none placeholder:text-[#BABFC2] text-black  w-full xl:w-[496px] h-[90px] bg-[#f4f4f4] rounded-[15px] py-[16px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
               />
               {methods.formState.errors.message && (
                 <div className="text-red-500 text-[12px]">
@@ -162,7 +162,7 @@ function ContactForm() {
           <button
             type="submit"
             disabled={isPending}
-            className="flex gap-[16px] items-start justify-center self-stretch shrink-0 bg-[#0e4a79] text-[#fff] rounded-[45px] px-[50px] py-[14px]"
+            className="flex gap-[16px] items-start justify-center self-stretch shrink-0 bg-[#5D9D9F] text-[#fff] rounded-[15px] px-[50px] py-[14px]"
           >
             {isPending ? "جاري الإرسال..." : "إرسال"}
           </button>
