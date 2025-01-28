@@ -402,3 +402,19 @@ html {
   animation: arrowMoveDown 1s ease-in-out .5s infinite; /* Bottom arrow moves down after a 1s delay */
 }
 
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #FFFFFF !important;
+  opacity: 0.5;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+/* Customizing the active bullet */
+.swiper-pagination-bullet-active {
+  background: #F8FBFC !important;
+  width: 14px !important;
+  height: 14px !important;
+  opacity: 1;
+}
+
