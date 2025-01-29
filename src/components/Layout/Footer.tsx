@@ -1,6 +1,7 @@
 import React from "react";
 import { FaXTwitter, FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa6";
 import initTranslations from "@/app/i18n";
+import Link from "next/link";
 async function Footer({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["common"]);
 
@@ -12,7 +13,19 @@ async function Footer({ locale }: { locale: string }) {
 {url:"",icon:"/assets/images/socialicons/whatsapp.svg"},
   ];
 
+  const links = [
+    { title: "تقديم شكوى", url: "/complaints" },
+    { title: "تواصل معنا", url: "/contact-us" },
+    { title: "الأسئلة الشائعة", url: "/faq" },
+    { title: "المنتجات", url: "/products" },
+    { title: "من نحن", url: "/about-us" },
+    { title: "احسب تمويلك", url: "/calculate" }
+  ].reverse(); // Reverse if you want to maintain the original order
 
+  const policyLinks = [
+    { title: "سياسة الخصوصية", url: "/privacy-policy" },
+    { title: "شروط الاستخدام", url: "/terms-of-use" }
+  ];
 
   return (
     <div className="bg-[#3d898d] w-full relative mt-[350px]">
@@ -104,25 +117,28 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
               </div>
             </div>
             <div className="flex flex-col gap-[16px]">
-              <span className="text-[16px] text-[#fff] font-semibold leading-[22px]">
-                روابط الموقع
-              </span>
-              <div className="flex w-full gap-[16px] flex-wrap">
-                {["تقديم شكوى", "تواصل معنا", "الأسئلة الشائعة", "المنتجات", "من نحن", "احسب تمويلك"].reverse().map((link, index) => (
-                  <span key={index} className="text-[14px] text-[#fff] leading-[21px]">
-                    {link}
-                  </span>
-                ))}
-              </div>
-            </div>
+      <span className="text-[16px] text-[#fff] font-semibold leading-[22px]">
+        روابط الموقع
+      </span>
+      <div className="flex w-full gap-[16px] flex-wrap">
+        {links.map((link, index) => (
+          <Link key={index} href={link.url} className="text-[14px] text-[#fff] leading-[21px] hover:underline">
+            {link.title}
+          </Link>
+        ))}
+      </div>
+    </div>
           </div>
         </div>
 
         <div className="flex w-full flex-col lg:flex-row lg:w-[1152px] justify-between items-center border-t border-[#5d9d9f] pt-[40px]">
-          <div className="flex gap-[32px]">
-            <span className="text-[14px] text-[#fff] leading-[21px]">سياسة الخصوصية</span>
-            <span className="text-[14px] text-[#fff] leading-[21px]">شروط الاستخدام</span>
-          </div>
+        <div className="flex gap-[32px]">
+      {policyLinks.map((link, index) => (
+        <Link key={index} href={link.url} className="text-[14px] text-[#fff] leading-[21px] hover:underline">
+          {link.title}
+        </Link>
+      ))}
+    </div>
           <span className="text-[14px] text-[#fff] leading-[21px]">
             2025 ©, جميع الحقوق محفوظة لشركة اعتمد
           </span>

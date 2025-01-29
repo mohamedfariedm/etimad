@@ -24,11 +24,11 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
 
   return (
     <section className="min-h-screen ">
-      <Hero t={t}/>
+      <Hero t={t} />
       <div className="flex flex-col gap-[136px] px-5 sm:px-0">
       <EasyWay t={t}/>
       <Products t={t}/>
-      <Calculate t={t}/>
+      <Calculate/>
       <AboutApp t={t}/>
       <Faq/>
       <Numbers t={t}/>

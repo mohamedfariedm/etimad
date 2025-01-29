@@ -14,17 +14,34 @@ interface NavLinkProps {
 
 export default function NavLink({ href, children, className,style }: NavLinkProps) {
   const pathname = usePathname();
+  
   const isActive = pathname === href;
+console.log(href);
 
   return (
     <>
     <Link
       href={href}
-      className={cn( "relative",isActive ? "active " : "", className)}
+      className={cn(
+        "relative",
+        isActive && (href === "/" || href === "/en") 
+          ? "font-semibold text-white bukra-semi-bold" 
+          : isActive 
+            ? "font-semibold text-[#5d9d9f] bukra-semi-bold"
+            : "text-[#5d9d9f]",
+        className
+      )}
       style={style}
     >
       {children}
-    <div className={isActive ? "w-full h-[2px] shrink-0 bg-white absolute bottom-[-10px] left-0 z-[6]" : "hidden"} />
+    <div className={cn(
+  isActive 
+    ? (href === "/" || href === "/en") 
+      ? "w-full h-[2px] shrink-0 bg-white absolute bottom-[-10px] left-0 z-[6]" 
+      : "w-full h-[2px] shrink-0 bg-[#5d9d9f] absolute bottom-[-10px] left-0 z-[6]"
+    : "hidden"
+)}
+ />
     </Link>
     
 

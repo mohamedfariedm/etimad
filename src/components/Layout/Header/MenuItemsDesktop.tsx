@@ -5,16 +5,20 @@ import { TFunction } from "i18next";
 export default function MenuItemsDesktop({
   t,
   className,
+  locale,
 }: {
   t: TFunction;
   className?: string;
+  locale?: string;
 }) {
+  console.log(locale);
+  
   const menuItems = [
-    { label: "الرئيسية", href: "/ar", width: "58px" },
-    { label: "المنتجات", href: "/products", width: "55px" },
-    { label: "من نحن", href: "/about", width: "44px" },
-    { label: "احسب تمويلك", href: "/calculator", width: "87px" },
-    { label: "تواصل معنا", href: "/contact", width: "69px" },
+    { label: "الرئيسية", href: `/`, width: "58px" },
+    { label: "المنتجات", href: `/products`, width: "55px" },
+    { label: "من نحن", href: `/about-us`, width: "44px" },
+    { label: "احسب تمويلك", href: `/calculate`, width: "87px" },
+    { label: "تواصل معنا", href: `/contact-us`, width: "69px" },
   ];
   
 
@@ -22,7 +26,7 @@ export default function MenuItemsDesktop({
   return (
     <div
     className={cn(
-      "hidden md:flex xl:w-[425px] h-[49px] pt-[12px] pr-[24px] pb-[12px] pl-[24px] gap-[16px] items-center justify-center flex-nowrap bg-[rgba(231,240,241,0.2)] rounded-[16px] border-none absolute top-[3px] left-1/2 translate-x-[-50%] translate-y-0 pointer",
+      "hidden md:flex gap[16px] xl:w-[425px] h-[49px] pt-[12px] pr-[24px] pb-[12px] pl-[24px] gap-[16px] items-center justify-center flex-nowrap bg-[rgba(231,240,241,0.2)] rounded-[16px] border-none absolute top-[3px] left-1/2 translate-x-[-50%] translate-y-0 pointer",
       className
     )}
   >
@@ -31,14 +35,10 @@ export default function MenuItemsDesktop({
         key={index}
         href={item.href}
         className={cn(
-          "flex items-center justify-center shrink-0 text-[14px] font-normal leading-[16.406px] relative",
-          {
-            "font-semibold text-[#f8fbfc]": index === 0, // Highlight the first item
-            "text-[#5d9d9f]": index !== 0,
-          }
+          "flex items-center justify-center shrink-0 text-[14px] font-normal leading-[16.406px] relative"
         )}
         style={{
-          width: item.width,
+          // width: item.width,
           height: "25px",
         }}
       >

@@ -4,8 +4,8 @@ export const i18nRouterConfig: {
   prefixDefault: boolean;
   serverSetCookie: "always" | "if-empty" | undefined;
 } = {
-  locales: ["en", "ar"],
-  defaultLocale: "en",
+  locales: ["ar", "en"],
+  defaultLocale: "ar",
   prefixDefault: false,
   serverSetCookie: "always",
 };
