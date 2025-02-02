@@ -14,10 +14,10 @@ function AboutApp({ t }: { t: TFunction }) {
         <div className="w-[245px] h-[124px] shrink-0 relative z-20">
           <div className="w-[22px] h-[64px] bg-[url(/assets/images/aboutapp/1.svg)] bg-cover bg-no-repeat relative z-[23] mt-[-1px] mr-0 mb-0 ml-[219px]" />
           <span className="flex w-[92px] h-[27px] justify-end items-start  text-[14px] font-bold leading-[26.6px] text-[#5d9d9f] relative text-right whitespace-nowrap z-[21] mt-[-10px] mr-0 mb-0 ml-[153px]">
-            تحمل التطبيق
-          </span>
+          {t("aboutApp.download.title")}
+                              </span>
           <span className="flex w-[212px] h-[54px] justify-end items-start  text-[14px] font-normal leading-[26.6px] text-[#5d9d9f] relative text-right z-[22] mt-0 mr-0 mb-0 ml-[33px]">
-            أبدأ بتنزيل التطبيق المتاح على iOS و Android.
+          {t("aboutApp.download.description")}
           </span>
         </div>
       </div>
@@ -31,10 +31,10 @@ function AboutApp({ t }: { t: TFunction }) {
         <div className="w-[245px] h-[134px] shrink-0 relative z-[11]">
           <div className="w-[46px] h-[64px] bg-[url(/assets/images/aboutapp/2.svg)] bg-cover bg-no-repeat relative z-[14] mt-[4px] mr-0 mb-0 ml-[199px]" />
           <span className="flex w-[69px] h-[27px] justify-end items-start  text-[14px] font-bold leading-[26.6px] text-[#5d9d9f] relative text-right whitespace-nowrap z-[12] mt-[-10px] mr-0 mb-0 ml-[176.5px]">
-            اختر المنتج
+       {t("aboutApp.chooseProduct.title")}
           </span>
           <span className="flex w-[191px] h-[54px] justify-end items-start  text-[14px] font-normal leading-[26.6px] text-[#5d9d9f] relative text-right z-[13] mt-0 mr-0 mb-0 ml-[55px]">
-            حدد المنتج الذي يناسب احتياجاتك المالية.
+            {t("aboutApp.chooseProduct.description")}
           </span>
         </div>
       </div>
@@ -48,10 +48,10 @@ function AboutApp({ t }: { t: TFunction }) {
         <div className="w-[245px] h-[136px] shrink-0 relative z-[2]">
           <div className="w-[48px] h-[64px] bg-[url(/assets/images/aboutapp/3.svg)] bg-cover bg-no-repeat relative z-[5] mt-[5px] mr-0 mb-0 ml-[197px]" />
           <span className="flex w-[97px] h-[27px] justify-end items-start  text-[14px] font-bold leading-[26.6px] text-[#5d9d9f] relative text-right whitespace-nowrap z-[3] mt-[-10px] mr-0 mb-0 ml-[148px]">
-            احسب التمويل
+            {t("aboutApp.calculate.title")}
           </span>
           <span className="flex w-[245px] h-[54px] justify-end items-start  text-[14px] font-normal leading-[26.6px] text-[#5d9d9f] relative text-right z-[4] mt-0 mr-0 mb-0 ml-0">
-            استخدم الحاسبة التقريبية لمعرفة القسط الشهري.
+            {t("aboutApp.calculate.description")}
           </span>
         </div>
       </div>

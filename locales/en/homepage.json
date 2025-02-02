@@ -1,117 +1,135 @@
 {
   "hero": {
-    "title": "Smart Financial AI  Insights for Your Business Growth",
-    "subtitle": "AI-powered financial insights for smarter decisions. ADVIX simplifies managing your finances with clarity, precision, and actionable guidance.",
-    "cta": "Get Started Now",
-    "cta_2": "Watch video",
-    "AnimatedInputText": { "cta": "Generate", "sentences": ["How to Calculate Net Profit","How to Improve Cash Flow","What is Break-Even Analysis"] }
+    "title": "Financing that meets your needs in the simplest steps",
+    "description": "We provide you with flexible personal and business financing options, fast processing, and easy terms tailored to your needs.",
+    "more": "More",
+    "apply": "Apply for Financing",
+    "download": "Download the app now"
   },
-  "clients": { "title": "Join 4,000+ companies already growing" },
-  "features": {
-    "PreHeading": "Features",
-    "Heading": "Streamline Your Finances",
-    "SubHeading": "Efficiently manage data, forecast outcomes, and receive real-time insights. Our tools simplify your financial tasks, keeping you informed and in control.",
-    "list": [
-      {
-        "heading": "AI Chatbot",
-        "subheading": "Get instant answers and guidance on financial matters—whether you're an expert or just starting out."
-      },
-      {
-        "heading": "Data Entry Dashboard",
-        "subheading": "Effortlessly manage and update your financial data with a user-friendly, accurate table format."
-      },
-      {
-        "heading": "Financial Forecasting",
-        "subheading": "Predict future financial outcomes with past data to plan and make informed decisions."
-      },
-      {
-        "heading": "Automated Notifications",
-        "subheading": "Receive timely alerts on key financial events to act swiftly and stay on top of your finances."
-      },
-      {
-        "heading": "Routine & Notification Settings",
-        "subheading": "Customize routine notifications for financial events, like weekly cash flow reports, to stay informed."
-      },
-      {
-        "heading": "Data Visualization",
-        "subheading": "Transform complex data into clear, actionable charts and graphs for better decision-making."
-      }
-    ]
+  "easyWay": {
+    "title": "A fast, secure, and easy financing experience",
+    "description": "All your financial needs in one place with simple and secure steps",
+    "fast": {
+      "title": "Fast",
+      "description": "Get financing in record time"
+    },
+    "secure": {
+      "title": "Secure",
+      "description": "Your financing is protected with top security standards"
+    },
+    "easy": {
+      "title": "Easy",
+      "description": "Simple procedures and easy steps"
+    }
   },
-  "values": {
-    "PreHeading": "Our Values",
-    "Heading": "Efficient Financial Management",
-    "SubHeading": "Experience streamlined financial solutions with clear insights, guidance for non-financial managers, real-time analysis, and cost-effective expertise.",
-    "cta": "Get Started Now",
-    "list": [
-      {
-        "heading": "Easy Data Analysis",
-        "subheading": "Turns complex financial data into clear insights, making it easy for you to understand and act on."
-      },
-      {
-        "heading": "Non-Financial Managers",
-        "subheading": "Simplifies financial reports and guides you with key questions, helping you make informed decisions effortlessly."
-      },
-      {
-        "heading": "Fast Insights",
-        "subheading": "Provides real-time, actionable insights to help you make quick and effective decisions for your business."
-      },
-      {
-        "heading": "Affordable Expertise",
-        "subheading": "Offers expert financial analysis and recommendations at a fraction of the cost, enhancing your business."
-      }
-    ]
+  "products": {
+    "title": "Financing Products",
+    "travel": {
+      "title": "Travel",
+      "description": "Make your travel easier and better with top-selected tourism companies."
+    },
+    "tuwaiqYouth": {
+      "title": "Tuwaiq Youth",
+      "description": "We support our students in financing their school and university needs."
+    },
+    "recruitment": {
+      "title": "Recruitment",
+      "description": "We help you finance domestic worker recruitment costs with ease."
+    },
+    "personalFinance": {
+      "title": "Personal Finance",
+      "description": "We provide fast and flexible financing to cover your expenses."
+    },
+    "beauty": {
+      "title": "Beauty",
+      "description": "Finance your beauty needs and personal care expenses easily."
+    },
+    "silati": {
+      "title": "Silati",
+      "description": "Easily pay for your daily needs and purchases with our flexible services."
+    }
   },
-
-  "integrations": {
-    "PreHeading": "Integrations Tools",
-    "Heading": "Seamless Integrations with Your Tools",
-    "SubHeading": "ADVIX connects effortlessly with the tools you already use, streamlining your financial processes."
+  "calculate": {
+    "title": "Approximate Calculator",
+    "description": "This is an indicative calculator. You can use it to estimate your monthly installment and repayment period.",
+    "info": "Enter loan amount and duration to calculate your expected monthly installment.",
+    "loanAmount": "Loan Amount (SAR)",
+    "placeholder": "1000 SAR",
+    "duration": "Repayment Period (Months)",
+    "calculate": "Calculate Installment",
+    "monthlyInstallment": "Monthly Installment",
+    "totalAmount": "Total Amount",
+    "totalProfit": "Total Profit",
+    "currency": "SAR"
   },
-  "testimonials": {
-    "Heading": "With ADVIX, we can easily navigate complex financial data and make informed decisions quickly. Exceptional tool!"
+  "aboutApp": {
+    "download": {
+      "title": "Download the App",
+      "description": "Start by downloading the app available on iOS and Android."
+    },
+    "chooseProduct": {
+      "title": "Choose a Product",
+      "description": "Select the financial product that suits your needs."
+    },
+    "calculate": {
+      "title": "Calculate Financing",
+      "description": "Use the approximate calculator to determine your monthly installment."
+    }
   },
-
-  "Blogs": {
-    "PreHeading": "Latest posts",
-    "Heading": "Insights from Our Experts",
-    "SubHeading": "Explore the latest trends and tips in financial management with our expert blog posts.",
-    "cta": "View all posts",
-    "list": [
-      {
-        "heading": "Easy Data Analysis",
-        "subheading": "Turns complex financial data into clear insights, making it easy for you to understand and act on."
-      },
-      {
-        "heading": "Non-Financial Managers",
-        "subheading": "Simplifies financial reports and guides you with key questions, helping you make informed decisions effortlessly."
-      },
-      {
-        "heading": "Fast Insights",
-        "subheading": "Provides real-time, actionable insights to help you make quick and effective decisions for your business."
-      },
-      {
-        "heading": "Affordable Expertise",
-        "subheading": "Offers expert financial analysis and recommendations at a fraction of the cost, enhancing your business."
-      }
-    ]
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Etimad is a leading financial services company providing financing solutions to individuals with a highly skilled professional team and a customer-focused approach.",
+    "q1": {
+      "question": "How do I apply for financing?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    },
+    "q2": {
+      "question": "What are the payment methods?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    },
+    "q3": {
+      "question": "What is Etimad Finance?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    },
+    "q4": {
+      "question": "What is Etimad Finance?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    },
+    "q5": {
+      "question": "What is Etimad Finance?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    },
+    "q6": {
+      "question": "What is Etimad Finance?",
+      "answer": "Etimad Finance was founded in 2023 to provide Sharia-compliant financial solutions for individuals, following the rules and regulations issued by the Saudi Central Bank regarding micro consumer finance."
+    }
   },
-  "location": {
-    "Heading": "Where to Find Us",
-    "SubHeading": "ADVIX is proud to serve businesses worldwide. Visit or contact one of our offices in your region for personalized support.",
-    "CommunicationChannels": [
-      {
-        "title": "Support",
-        "description": "Our friendly team is here to help."
-      },
-      {
-        "title": "Sales",
-        "description": "Questions or queries? Get in touch!"
-      },
-      {
-        "title": "Phone",
-        "description": "53 Suwar Street, Al-Yasmin, Thaqif"
-      }
-    ]
+  "numbers": {
+    "yearsInMarket": {
+      "value": "19+",
+      "description": "Years in the market"
+    },
+    "employees": {
+      "value": "+300",
+      "description": "Employees in service"
+    },
+    "branches": {
+      "value": "14",
+      "description": "Branches"
+    },
+    "customers": {
+      "value": "+500k",
+      "description": "Number of customers"
+    }
+  },
+  "tamwilk": {
+    "title": "Your Financing is on Us",
+    "description": "This text is a placeholder for an actual description that can be replaced. It has been generated by an Arabic text generator where you can create similar texts or many other options in addition to increasing the number of words generated by the application. \nIf you need more paragraphs, the Arabic text generator allows you to increase the number."
+  },
+  "certifications": {
+    "title": "Our Products Comply with Islamic Sharia Law",
+    "description1": "Providing Sharia-compliant products is one of the top priorities of Tamam Finance.",
+    "description2": "We continuously work with a team of Sharia experts specializing in Islamic finance to ensure all our services comply with Sharia principles.",
+    "description3": "Experts review and audit all transactions regularly to ensure ongoing compliance with Islamic Sharia law."
   }
 }

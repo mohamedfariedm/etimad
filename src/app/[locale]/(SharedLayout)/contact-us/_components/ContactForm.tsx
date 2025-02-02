@@ -7,48 +7,50 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { IoClose } from "react-icons/io5";
 import SuccessIcon from "@/components/ui/SuccessIcon";
+import { useTranslation } from "react-i18next";
 
-// Validation schema with Zod
-const ContactUsSchema = z.object({
-  firstName: z.string().min(1, "الاسم الأول مطلوب"),
-  lastName: z.string().min(1, "الاسم الأخير مطلوب"),
-  email: z
-    .string()
-    .email("يرجى إدخال بريد إلكتروني صالح")
-    .min(1, "البريد الإلكتروني مطلوب"),
-  phone: z
-    .string()
-    .regex(
-      /^(?:\+966|0)?5\d{8}$/,
-      "يرجى إدخال رقم هاتف سعودي صالح (يبدأ بـ +966 أو 05)"
-    )
-    .min(1, "رقم الهاتف مطلوب"),
-  message: z.string().min(1, "الرسالة مطلوبة"),
-});
+// Validation schema with translations
+const ContactUsSchema = (t: (key: string) => string) =>
+  z.object({
+    firstName: z.string().min(1, t("validation.firstName")),
+    lastName: z.string().min(1, t("validation.lastName")),
+    email: z
+      .string()
+      .email(t("validation.emailInvalid"))
+      .min(1, t("validation.emailRequired")),
+    phone: z
+      .string()
+      .regex(
+        /^(?:\+966|0)?5\d{8}$/,
+        t("validation.phoneInvalid")
+      )
+      .min(1, t("validation.phoneRequired")),
+    message: z.string().min(1, t("validation.message")),
+  });
 
-type ContactUsType = z.infer<typeof ContactUsSchema>;
+type ContactUsType = z.infer<ReturnType<typeof ContactUsSchema>>;
 
 function ContactForm() {
+  const { t } = useTranslation("contactUs");
+
   const methods = useForm<ContactUsType>({
-    resolver: zodResolver(ContactUsSchema),
+    resolver: zodResolver(ContactUsSchema(t)),
     mode: "onChange",
   });
 
   const [isPending, setIsPending] = useState(false); // Track loading state
 
   const onSubmit = async (data: ContactUsType) => {
-    setIsPending(true); // Show loading state when submitting the form
+    setIsPending(true);
 
     try {
-      // Mock API Call (replace with your actual API call)
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Show success toast
       toast.custom((ts) => (
         <div className="bg-background-primary-alt border border-border-primary text-text-secondary-700 p-4 rounded-lg shadow-lg flex items-center justify-between gap-3 overflow-hidden">
           <div className="flex items-center gap-4">
             <SuccessIcon />
-            <span className="text-sm font-medium">تم إرسال الرسالة بنجاح!</span>
+            <span className="text-sm font-medium">{t("successMessage")}</span>
           </div>
           <button
             onClick={() => toast.dismiss(ts)}
@@ -59,11 +61,11 @@ function ContactForm() {
         </div>
       ));
 
-      methods.reset(); // Reset the form after submission
+      methods.reset();
     } catch (error) {
-      toast.error("حدث خطأ أثناء الإرسال. حاول مرة أخرى.");
+      toast.error(t("errorMessage"));
     } finally {
-      setIsPending(false); // Hide loading state after form submission
+      setIsPending(false);
     }
   };
 
@@ -79,12 +81,12 @@ function ContactForm() {
               {/* First Name */}
               <div className="flex xl:w-[232px] flex-col gap-[8px] self-stretch shrink-0 relative z-[11]">
                 <label className="text-[14px] font-medium text-[#667680]">
-                  الاسم الأول *
+                  {t("form.firstName")} *
                 </label>
                 <input
                   {...methods.register("firstName")}
-                  placeholder="الاسم الأول"
-                  className="outline-none text-black w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] placeholder:text-[#BABFC2] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                  placeholder={t("form.firstNamePlaceholder")}
+                  className="outline-none text-black w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] placeholder:text-[#BABFC2] "
                 />
                 {methods.formState.errors.firstName && (
                   <div className="text-red-500 text-[12px]">
@@ -92,15 +94,16 @@ function ContactForm() {
                   </div>
                 )}
               </div>
+
               {/* Last Name */}
               <div className="flex xl:w-[232px] flex-col gap-[8px] self-stretch shrink-0 relative z-[3]">
                 <label className="text-[14px] font-medium text-[#667680]">
-                  الاسم الأخير *
+                  {t("form.lastName")} *
                 </label>
                 <input
                   {...methods.register("lastName")}
-                  placeholder="الاسم الأخير"
-                  className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                  placeholder={t("form.lastNamePlaceholder")}
+                  className="outline-none text-black placeholder:text-[#BABFC2] w-full xl:w-[232px] h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] "
                 />
                 {methods.formState.errors.lastName && (
                   <div className="text-red-500 text-[12px]">
@@ -109,16 +112,17 @@ function ContactForm() {
                 )}
               </div>
             </div>
+
             {/* Email */}
             <div className="flex flex-col gap-[8px] self-stretch shrink-0 relative z-[19]">
               <label className="text-[14px] font-medium text-[#667680]">
-                البريد الإلكتروني *
+                {t("form.email")} *
               </label>
               <input
                 {...methods.register("email")}
                 type="email"
                 placeholder="you@company.com"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                className="outline-none text-black placeholder:text-[#BABFC2] w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] "
               />
               {methods.formState.errors.email && (
                 <div className="text-red-500 text-[12px]">
@@ -126,15 +130,16 @@ function ContactForm() {
                 </div>
               )}
             </div>
+
             {/* Phone */}
             <div className="flex flex-col gap-[8px] self-stretch shrink-0 relative z-[27]">
               <label className="text-[14px] font-medium text-[#667680]">
-                رقم الهاتف *
+                {t("form.phone")} *
               </label>
               <input
                 {...methods.register("phone")}
-                placeholder="+966 5XXXXXXXX"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                placeholder={t("form.phonePlaceholder")}
+                className="outline-none text-black placeholder:text-[#BABFC2] w-full xl:w-[496px] h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] "
               />
               {methods.formState.errors.phone && (
                 <div className="text-red-500 text-[12px]">
@@ -142,15 +147,16 @@ function ContactForm() {
                 </div>
               )}
             </div>
+
             {/* Message */}
             <div className="flex flex-col gap-[8px] self-stretch shrink-0 relative z-[29]">
               <label className="text-[14px] font-medium text-[#667680]">
-                الرسالة
+                {t("form.message")}
               </label>
               <textarea
                 {...methods.register("message")}
-                placeholder="اترك لنا رسالة..."
-                className="outline-none placeholder:text-[#BABFC2] text-black  w-full xl:w-[496px] h-[90px] bg-[#f4f4f4] rounded-[15px] py-[16px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                placeholder={t("form.messagePlaceholder")}
+                className="outline-none placeholder:text-[#BABFC2] text-black w-full xl:w-[496px] h-[90px] bg-[#f4f4f4] rounded-[15px] py-[16px] px-[16px] "
               />
               {methods.formState.errors.message && (
                 <div className="text-red-500 text-[12px]">
@@ -164,7 +170,7 @@ function ContactForm() {
             disabled={isPending}
             className="flex gap-[16px] items-start justify-center self-stretch shrink-0 bg-[#5D9D9F] text-[#fff] rounded-[15px] px-[50px] py-[14px]"
           >
-            {isPending ? "جاري الإرسال..." : "إرسال"}
+            {isPending ? t("form.sending") : t("form.submit")}
           </button>
         </form>
       </div>

@@ -1,13 +1,14 @@
 "use client";
-import initTranslations from "@/app/i18n";
 import React, { useState } from "react";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from "swiper/modules";
-import { number } from "zod";
+import { useTranslation } from "react-i18next";
  function Features() {
+  const { t } = useTranslation("products");
+
   const images = [
     '/assets/images/singleProduct/avatar.svg',
     '/assets/images/singleProduct/avatar.svg',
@@ -20,12 +21,12 @@ import { number } from "zod";
 
   // Array of buttons with their labels and icons
   const buttons = [
-    { id: 1,activeIcon:"/assets/images/singleProduct/6.svg", label: "التجميل", icon: "/assets/images/products/component1.svg" },
-    { id: 2,activeIcon:"/assets/images/singleProduct/5.svg", label: "الاستقدام", icon: "/assets/images/products/component6.svg" },
-    { id: 3,activeIcon:"/assets/images/singleProduct/4.svg", label: "السفر", icon: "/assets/images/products/component5.svg" },
-    { id: 4,activeIcon:"/assets/images/singleProduct/3.svg", label: "سلعتي", icon: "/assets/images/products/component4.svg" },
-    { id: 5,activeIcon:"/assets/images/singleProduct/2.svg", label: "التمويل الشخصي", icon: "/assets/images/products/component3.svg" },
-    { id: 6,activeIcon:"/assets/images/singleProduct/1.svg", label: "شباب طويق", icon: "/assets/images/products/component2.svg" },
+    { id: 1,activeIcon:"/assets/images/singleProduct/6.svg", label: "buttons.beauty", icon: "/assets/images/products/component1.svg" },
+    { id: 2,activeIcon:"/assets/images/singleProduct/5.svg", label: "buttons.recruitment", icon: "/assets/images/products/component6.svg" },
+    { id: 3,activeIcon:"/assets/images/singleProduct/4.svg", label: "buttons.travel", icon: "/assets/images/products/component5.svg" },
+    { id: 4,activeIcon:"/assets/images/singleProduct/3.svg", label: "buttons.salati", icon: "/assets/images/products/component4.svg" },
+    { id: 5,activeIcon:"/assets/images/singleProduct/2.svg", label: "buttons.personal_finance", icon: "/assets/images/products/component3.svg" },
+    { id: 6,activeIcon:"/assets/images/singleProduct/1.svg", label: "buttons.shabab_tuwaiq", icon: "/assets/images/products/component2.svg" },
   ];
   return (
     <>
@@ -53,7 +54,7 @@ import { number } from "zod";
                 button.id === activeButton ? "text-[#fff]" : "text-[#5d9d9f]"
               }`}
             >
-              {button.label}
+              {t(button.label)}
             </span>
           </div>
         </button>
@@ -93,23 +94,24 @@ import { number } from "zod";
               <div className="flex flex-col gap-[16px]  self-stretch shrink-0 flex-nowrap relative">
                 <div className="flex gap-[8px]  items-center self-stretch shrink-0 flex-nowrap relative">
                   <div className="w-[16px] h-[5px] shrink-0 bg-[#5d9d9f] rounded-[6px]" />
-                  <span className="flex w-[132px] h-[29px]  items-start shrink-0 basis-auto text-[16px] font-semibold leading-[29px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                    منتج شباب طويق:
+                  <span className="flex w-[132px] h-[29px]  items-start shrink-0 basis-auto text-[16px] font-semibold leading-[29px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+                   {t("product_details.title")}
                   </span>
                 </div>
                 <div className="flex flex-col gap-[12px] justify-center  self-stretch shrink-0 flex-nowrap relative">
                   {[
-                    "تمويل المصروفات الاستهلاكية",
-                    "تمويل المشتريات الدراسية",
-                    "تمويل سداد الرسوم الجامعية والمدرسية",
+                    "product_details.features.list.first",
+                    "product_details.features.list.second",
+                    "product_details.features.list.third",
+
                   ].map((text, idx) => (
                     <div
                       key={idx}
                       className="flex gap-[12px]  items-center self-stretch shrink-0 flex-nowrap"
                     >
                       <div className="w-[40px] h-[40px] shrink-0 bg-[url(/assets/images/singleProduct/right.svg)] bg-cover bg-no-repeat rounded-[999px] relative overflow-hidden" />
-                      <span className="flex w-full xl:w-[290px] xl:h-[29px]  items-start shrink-0 basis-auto text-[16px] font-normal leading-[29px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                        {text}
+                      <span className="flex w-full xl:w-[290px] xl:h-[29px]  items-start shrink-0 basis-auto text-[16px] font-normal leading-[29px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+                        {t(text)}
                       </span>
                     </div>
                   ))}
@@ -118,25 +120,25 @@ import { number } from "zod";
               <div className="flex flex-col gap-[16px]  self-stretch shrink-0 flex-nowrap relative">
                 <div className="flex gap-[8px]  items-center self-stretch shrink-0 flex-nowrap relative">
                   <div className="w-[16px] h-[5px] shrink-0 bg-[#5d9d9f] rounded-[6px]" />
-                  <span className="flex w-[150px] h-[29px]  items-start shrink-0 basis-auto text-[16px] font-semibold leading-[29px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                    شروط تمويل المنتج:
+                  <span className="flex w-[150px] h-[29px]  items-start shrink-0 basis-auto text-[16px] font-semibold leading-[29px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+{t("product_details.conditions.title")}
                   </span>
                 </div>
                 <div className="flex flex-col gap-[12px] justify-center  self-stretch shrink-0 flex-nowrap relative">
                   {[
-                    "الطلاب المعتمدون في الجامعات الحكوميه",
-                    "تكون سعودي الجنسية",
-                    "الحد الادنى ترم دراسي واحد ومكافاءه ثمان مية ريال",
-                    "الحد الادنى لمدة التمويل 3شهر وحد اعلى 9شهر",
-                    "الحد الاعلى اربع الالف والحد الادنى الف وخمس ميه ريال",
+                    "product_details.conditions.list.first",
+                    "product_details.conditions.list.second",
+                    "product_details.conditions.list.third",
+                    "product_details.conditions.list.fourth",
+                    "product_details.conditions.list.fifth",
                   ].map((condition, idx) => (
                     <div
                       key={idx}
                       className="flex gap-[12px]  items-center self-stretch shrink-0 flex-nowrap"
                     >
                       <div className="w-[40px] h-[40px] shrink-0 bg-[url(/assets/images/singleProduct/right.svg)] bg-cover bg-no-repeat rounded-[999px] relative overflow-hidden" />
-                      <span className="flex w-full xl:w-[380px] xl:h-[29px]  items-start shrink-0 basis-auto text-[16px] font-normal leading-[29px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                        {condition}
+                      <span className="flex w-full xl:w-[380px] xl:h-[29px]  items-start shrink-0 basis-auto text-[16px] font-normal leading-[29px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+                        {t(condition)}
                       </span>
                     </div>
                   ))}
@@ -147,25 +149,25 @@ import { number } from "zod";
           </div>
           <div className="flex flex-col gap-[32px] items-start self-stretch shrink-0 flex-nowrap relative">
             <div className="flex flex-col gap-[16px] justify-center  self-stretch shrink-0 flex-nowrap relative">
-              <span className="flex w-[191px] h-[44px]  items-start shrink-0 basis-auto text-[24px] font-semibold leading-[43.68px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                منتج شباب طويق
+              <span className="flex w-[191px] h-[44px]  items-start shrink-0 basis-auto text-[24px] font-semibold leading-[43.68px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+              {t("product_details.title")}
               </span>
-              <span className="xl:h-[32px] self-stretch shrink-0 basis-auto text-[16px] font-normal leading-[32px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                نساعدكم في اعتمد لتمويل مصروفاتكم الاستهلاكية والمدرسية لدعمكم في مرحلتكم الجامعية
-              </span>
+              <span className="xl:h-[32px] self-stretch shrink-0 basis-auto text-[16px] font-normal leading-[32px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+              {t("product_details.description")}
+                            </span>
             </div>
             <div className="flex flex-col gap-[9px] items-start self-stretch shrink-0 flex-nowrap relative">
               <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative">
                 <span className="flex w-[145px] h-[29px] justify-center items-start shrink-0 basis-auto text-[16px] font-medium leading-[29px] text-[#5d9d9f] relative text-center xl:whitespace-nowrap">
-                  الحد الأقصى للتمويل
+{t("product_details.max_financing")}
                 </span>
-                <span className="flex w-[128px] h-[44px]  items-start shrink-0 basis-auto text-[24px] font-semibold leading-[43.68px] text-[#5d9d9f] relative text-right xl:whitespace-nowrap">
-                  4,000 ريال
+                <span className="flex w-[128px] h-[44px]  items-start shrink-0 basis-auto text-[24px] font-semibold leading-[43.68px] text-[#5d9d9f] relative text-start xl:whitespace-nowrap">
+                  4,000 {t("product_details.amount")}
                 </span>
               </div>
               <button className="flex p-[14px] gap-[8px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#5d9d9f] rounded-[16px] border-none relative pointer">
                 <span className="flex w-[81px] h-[29px] justify-center items-start shrink-0 basis-auto text-[16px] font-medium leading-[29px] text-[#fff] relative text-center xl:whitespace-nowrap">
-                  طلب تمويل
+                  {t("product_details.apply_now")}
                 </span>
               </button>
             </div>

@@ -8,11 +8,6 @@ async function page({
 }) {
 
 
-
-  const { t } = await initTranslations(locale, ["blog"]);
-
-
-
   return (
 <Features/>
   );

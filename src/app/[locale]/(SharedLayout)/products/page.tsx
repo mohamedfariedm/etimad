@@ -43,7 +43,7 @@ async function page({
   // console.log(blogs);
   
 
-  const { t } = await initTranslations(locale, ["blog"]);
+  const { t } = await initTranslations(locale, ["homepage"]);
 
   return (<>
   

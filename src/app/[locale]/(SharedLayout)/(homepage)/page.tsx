@@ -28,7 +28,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
       <div className="flex flex-col gap-[136px] px-5 sm:px-0">
       <EasyWay t={t}/>
       <Products t={t}/>
-      <Calculate/>
+      <Calculate />
       <AboutApp t={t}/>
       <Faq/>
       <Numbers t={t}/>

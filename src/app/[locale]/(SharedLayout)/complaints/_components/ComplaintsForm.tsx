@@ -7,28 +7,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { IoClose } from "react-icons/io5";
 import SuccessIcon from "@/components/ui/SuccessIcon";
+import { useTranslation } from "react-i18next";
 
 // Validation schema with Zod
 const ComplaintsSchema = z.object({
-  email: z
-    .string()
-    .email("يرجى إدخال بريد إلكتروني صالح")
-    .min(1, "البريد الإلكتروني مطلوب"),
-  fullName: z.string().min(1, "الاسم بالكامل مطلوب"),
+  email: z.string().email().min(1, "validation.email_required"),
+  fullName: z.string().min(1, "validation.full_name_required"),
   phone: z
     .string()
-    .regex(
-      /^(?:\+966|0)?5\d{8}$/,
-      "يرجى إدخال رقم هاتف سعودي صالح (يبدأ بـ +966 أو 05)"
-    )
-    .min(1, "رقم الهاتف مطلوب"),
-  reason: z.string().min(1, "سبب الشكوى مطلوب"),
-  message: z.string().min(1, "الرسالة مطلوبة"),
+    .regex(/^(?:\+966|0)?5\d{8}$/, "validation.invalid_phone")
+    .min(1, "validation.phone_required"),
+  reason: z.string().min(1, "validation.reason_required"),
+  message: z.string().min(1, "validation.message_required"),
 });
 
 type ComplaintsType = z.infer<typeof ComplaintsSchema>;
 
 function ComplaintsForm() {
+  const { t } = useTranslation("complaints");
   const methods = useForm<ComplaintsType>({
     resolver: zodResolver(ComplaintsSchema),
     mode: "onChange",
@@ -46,7 +42,7 @@ function ComplaintsForm() {
         <div className="bg-background-primary-alt border border-border-primary text-text-secondary-700 p-4 rounded-lg shadow-lg flex items-center justify-between gap-3 overflow-hidden">
           <div className="flex items-center gap-4">
             <SuccessIcon />
-            <span className="text-sm font-medium">تم إرسال الشكوى بنجاح!</span>
+            <span className="text-sm font-medium">{t("success_message")}</span>
           </div>
           <button
             onClick={() => toast.dismiss(ts)}
@@ -59,7 +55,7 @@ function ComplaintsForm() {
 
       methods.reset();
     } catch (error) {
-      toast.error("حدث خطأ أثناء الإرسال. حاول مرة أخرى.");
+      toast.error(t("error_message"));
     } finally {
       setIsPending(false);
     }
@@ -68,114 +64,113 @@ function ComplaintsForm() {
   return (
     <FormProvider {...methods}>
       <div className="flex w-full lg:w-[918px] pt-[32px] pr-[32px] pb-[32px] pl-[32px] flex-col gap-[64px] items-center shrink-0 flex-nowrap bg-[#fbfbfb] rounded-[16px] relative z-[3]">
-      <form
+        <form
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="flex w-full  flex-col gap-[40px] items-center shrink-0 relative"
+          className="flex w-full flex-col gap-[40px] items-center shrink-0 relative"
         >
           <div className="flex flex-col gap-[24px] items-center self-stretch shrink-0 relative z-[1]">
-            <div className="flex flex-col lg:flex-row w-full gap-[32px] ">
-            <div className="flex flex-col w-full lg:w-[411px]  gap-[8px]  self-stretch shrink-0 relative z-[2]">
-              <label className="text-[14px] font-medium text-[#667680]">
-                الاسم بالكامل *
-              </label>
-              <input
-                {...methods.register("fullName")}
-                placeholder="الاسم بالكامل"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full  h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
-              />
-              {methods.formState.errors.fullName && (
-                <div className="text-red-500 text-[12px]">
-                  {methods.formState.errors.fullName.message}
-                </div>
-              )}
+            <div className="flex flex-col lg:flex-row w-full gap-[32px]">
+              {/* Full Name */}
+              <div className="flex flex-col w-full lg:w-[411px] gap-[8px]">
+                <label className="text-[14px] font-medium text-[#667680]">
+                  {t("fields.full_name")}
+                </label>
+                <input
+                  {...methods.register("fullName")}
+                  placeholder={t("placeholders.full_name")}
+                  className="outline-none text-black placeholder:text-[#BABFC2] w-full h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] shadow-sm"
+                />
+                {methods.formState.errors.fullName && (
+                  <div className="text-red-500 text-[12px]">
+                    {t(`${methods.formState.errors.fullName.message}`)}
+                  </div>
+                )}
+              </div>
+
+              {/* Email */}
+              <div className="flex flex-col w-full lg:w-[411px] gap-[8px]">
+                <label className="text-[14px] font-medium text-[#667680]">
+                  {t("fields.email")}
+                </label>
+                <input
+                  {...methods.register("email")}
+                  placeholder={t("placeholders.email")}
+                  className="outline-none text-black placeholder:text-[#BABFC2] w-full h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] shadow-sm"
+                />
+                {methods.formState.errors.email && (
+                  <div className="text-red-500 text-[12px]">
+                    {t(`${methods.formState.errors.email.message}`)}
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="flex flex-col w-full lg:w-[411px]  gap-[8px]  self-stretch shrink-0 relative z-[1]">
-              <label className="text-[14px] font-medium text-[#667680]">
-                البريد الإلكتروني *
-              </label>
-              <input
-                {...methods.register("email")}
-                placeholder="you@company.com"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full  h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
-              />
-              {methods.formState.errors.email && (
-                <div className="text-red-500 text-[12px]">
-                  {methods.formState.errors.email.message}
-                </div>
-              )}
+            <div className="flex w-full flex-col lg:flex-row gap-[32px]">
+              {/* Phone */}
+              <div className="flex flex-col gap-[8px] w-full lg:w-[411px]">
+                <label className="text-[14px] font-medium text-[#667680]">
+                  {t("fields.phone")}
+                </label>
+                <input
+                  {...methods.register("phone")}
+                  placeholder={t("placeholders.phone")}
+                  className="outline-none text-black placeholder:text-[#BABFC2] w-full h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] shadow-sm"
+                />
+                {methods.formState.errors.phone && (
+                  <div className="text-red-500 text-[12px]">
+                    {t(`${methods.formState.errors.phone.message}`)}
+                  </div>
+                )}
+              </div>
+
+              {/* Complaint Reason */}
+              <div className="flex flex-col gap-[8px] w-full lg:w-[411px]">
+                <label className="text-[14px] font-medium text-[#667680]">
+                  {t("fields.reason")}
+                </label>
+                <input
+                  {...methods.register("reason")}
+                  placeholder={t("placeholders.reason")}
+                  className="outline-none text-black placeholder:text-[#BABFC2] w-full h-[56px] bg-[#f4f4f4] rounded-[15px] px-[16px] shadow-sm"
+                />
+                {methods.formState.errors.reason && (
+                  <div className="text-red-500 text-[12px]">
+                    {t(`${methods.formState.errors.reason.message}`)}
+                  </div>
+                )}
+              </div>
             </div>
 
-
-
-            </div>
-
-<div className="flex w-full flex-col lg:flex-row gap-[32px]">
-
-            <div className="flex flex-col gap-[8px] w-full lg:w-[411px]  self-stretch shrink-0 relative z-[3]">
+            {/* Message */}
+            <div className="flex flex-col gap-[8px] self-stretch">
               <label className="text-[14px] font-medium text-[#667680]">
-                رقم الهاتف *
-              </label>
-              <input
-                {...methods.register("phone")}
-                placeholder="+966 5XXXXXXXX"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full  h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
-              />
-              {methods.formState.errors.phone && (
-                <div className="text-red-500 text-[12px]">
-                  {methods.formState.errors.phone.message}
-                </div>
-              )}
-            </div>
-
-            <div className="flex flex-col gap-[8px] w-full lg:w-[411px]  self-stretch shrink-0 relative z-[4]">
-              <label className="text-[14px] font-medium text-[#667680]">
-                سبب الشكوى *
-              </label>
-              <input
-                {...methods.register("reason")}
-                placeholder="اختر سبب الشكوى"
-                className="outline-none text-black placeholder:text-[#BABFC2]  w-full  h-[56px] bg-[#f4f4f4] rounded-[15px]  px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
-              />
-              {methods.formState.errors.reason && (
-                <div className="text-red-500 text-[12px]">
-                  {methods.formState.errors.reason.message}
-                </div>
-              )}
-            </div>
-
-
-</div>
-
-            <div className="flex flex-col gap-[8px]  self-stretch shrink-0 relative z-[5]">
-              <label className="text-[14px] font-medium text-[#667680]">
-                الرسالة *
+                {t("fields.message")}
               </label>
               <textarea
                 {...methods.register("message")}
-                placeholder="يرجى كتابة تفاصيل شكواك هنا بشكل واضح ومحدد..."
-                className="outline-none placeholder:text-[#BABFC2] text-black  w-full h-[173px] bg-[#f4f4f4] rounded-[15px] py-[16px] px-[16px] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]"
+                placeholder={t("placeholders.message")}
+                className="outline-none placeholder:text-[#BABFC2] text-black w-full h-[173px] bg-[#f4f4f4] rounded-[15px] py-[16px] px-[16px] shadow-sm"
               />
               {methods.formState.errors.message && (
                 <div className="text-red-500 text-[12px]">
-                  {methods.formState.errors.message.message}
+                  {t(`${methods.formState.errors.message.message}`)}
                 </div>
               )}
             </div>
           </div>
-          <div className="flex flex-col gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[47]">
 
-          <button
-            type="submit"
-            disabled={isPending}
-            className="flex gap-[8px] items-start justify-center self-stretch shrink-0 bg-[#5D9D9F] text-[#fff] rounded-[15px] px-[50px] py-[14px]"
-          >
-            {isPending ? "جاري الإرسال..." : "إرسال"}
-          </button>
-          <span className="flex w-full lg:w-[290px] h-[29px] justify-center items-start shrink-0 basis-auto  text-[16px] font-medium leading-[29px] text-[#90bbbd] relative text-center lg:whitespace-nowrap z-[51]">
-              نؤكد أن جميع بياناتك ستُعالج بسرية تامة
+          <div className="flex flex-col gap-[16px] items-center self-stretch">
+            <button
+              type="submit"
+              disabled={isPending}
+              className="flex gap-[8px] items-start justify-center self-stretch bg-[#5D9D9F] text-[#fff] rounded-[15px] px-[50px] py-[14px]"
+            >
+              {isPending ? t("buttons.sending") : t("buttons.submit")}
+            </button>
+            <span className="flex w-full lg:w-[290px] h-[29px] justify-center items-start text-[16px] font-medium text-[#90bbbd] text-center">
+              {t("privacy_note")}
             </span>
-            </div>
+          </div>
         </form>
       </div>
     </FormProvider>

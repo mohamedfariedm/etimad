@@ -14,17 +14,17 @@ async function Footer({ locale }: { locale: string }) {
   ];
 
   const links = [
-    { title: "تقديم شكوى", url: "/complaints" },
-    { title: "تواصل معنا", url: "/contact-us" },
-    { title: "الأسئلة الشائعة", url: "/faq" },
-    { title: "المنتجات", url: "/products" },
-    { title: "من نحن", url: "/about-us" },
-    { title: "احسب تمويلك", url: "/calculate" }
-  ].reverse(); // Reverse if you want to maintain the original order
+    { title: t("footer.complaints"), url: "/complaints" },
+    { title: t("footer.contact_us"), url: "/contact-us" },
+    { title: t("footer.faq"), url: "/faq" },
+    { title: t("footer.products"), url: "/products" },
+    { title: t("footer.about_us"), url: "/about-us" },
+    { title: t("footer.calculate"), url: "/calculate" },
+  ].reverse(); 
 
   const policyLinks = [
-    { title: "سياسة الخصوصية", url: "/privacy-policy" },
-    { title: "شروط الاستخدام", url: "/terms-of-use" }
+    { title: t("footer.privacy_policy"), url: "/privacy-policy" },
+    { title: t("footer.terms_of_use"), url: "/terms-of-use" },
   ];
 
   return (
@@ -38,8 +38,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
             <div className="w-[129px] h-[55px] bg-[url(/assets/images/framefooter.svg)] bg-cover bg-no-repeat" />
             <div className="w-[167.658px] h-[54.848px] bg-[url(/assets/images/surfacefooter.svg)] bg-[length:100%_100%] bg-no-repeat" />
             <span className="flex w-full lg:w-[375px] lg:h-[44px] text-[12px] text-[#fff] leading-[21.84px]">
-              اعتمد خاضعة لإشراف ورقابة البنك المركزي السعودي بموجب ترخيص رقم
-              52/أش/201905.
+{t("footer.supervised_by")}
             </span>
           </div>
         </div>
@@ -49,20 +48,19 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
             <div className="flex flex-col gap-[24px]">
               <div className="flex flex-col gap-[12px]">
                 <span className="text-[24px] text-[#fff] font-semibold leading-[33.6px]">
-                  النشرة الإخبارية
+                {t("footer.newsletter")}
                 </span>
                 <span className="text-[14px] text-[#fff] leading-[21px]">
-                  احصل على آخر التحديثات حول ميزات ايطار الجديدة وتحديثات المنتجات
-                  الجديدة.
+                {t("footer.newsletter_description")}
                 </span>
               </div>
               <div className="flex flex-col lg:flex-row gap-[8px]">
                 <input
                   className=" w-full lg:w-[343px] h-[45px] bg-transparent outline-none placeholder:text-[#fff] rounded-[12px] border border-[#f8fbfc] p-[16px] text-[#fff]"
-                  placeholder="ادخل البريد الالكترونى"
+                  placeholder={t("footer.enter_email")}
                 />
                 <button className="w-[99px] h-[45px] bg-[#fff] text-[#667680] rounded-[12px] shadow-md">
-                  اشترك الان
+                {t("footer.subscribe_now")}
                 </button>
               </div>
             </div>
@@ -88,7 +86,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
           <div className="flex flex-col gap-[56px]">
             <div className="flex flex-col gap-[16px]">
               <span className="text-[16px] text-[#fff] font-semibold leading-[22px]">
-                لديك استفسار؟
+              {t("footer.have_questions")}
               </span>
               <div className="flex flex-col sm:flex-row gap-[56px]">
                 <div className="flex gap-[16px] items-center">
@@ -96,7 +94,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
                   className="w-[32px] h-[32px] bg-[url(/assets/images/socialicons/call.svg)] bg-cover" />
                   <div className="flex flex-col gap-2">
                     <span className="text-[12px] text-[#fff] leading-[18px]">
-                      اتصل بنا على
+                    {t("footer.call_us")}
                     </span>
                     <span dir="ltr" className="text-[14px] text-[#fff] font-medium">
                       +966 920020077
@@ -107,7 +105,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
                   <div className="w-[32px] h-[32px] bg-[url(/assets/images/socialicons/mail.svg)] bg-cover" />
                   <div className="flex flex-col gap-2">
                     <span className="text-[12px] text-[#fff] leading-[18px]">
-                      راسلنا على
+                    {t("footer.email_us")}
                     </span>
                     <span className="text-[14px] text-[#fff] font-medium">
                       info@enjaz.com.sa
@@ -118,7 +116,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
             </div>
             <div className="flex flex-col gap-[16px]">
       <span className="text-[16px] text-[#fff] font-semibold leading-[22px]">
-        روابط الموقع
+      {t("footer.site_links")}
       </span>
       <div className="flex w-full gap-[16px] flex-wrap">
         {links.map((link, index) => (
@@ -140,7 +138,7 @@ className="main-container w-[1152px] h-[350px] bg-[url(/assets/images/footertrac
       ))}
     </div>
           <span className="text-[14px] text-[#fff] leading-[21px]">
-            2025 ©, جميع الحقوق محفوظة لشركة اعتمد
+          {t("footer.copyright")}
           </span>
         </div>
       </div>
