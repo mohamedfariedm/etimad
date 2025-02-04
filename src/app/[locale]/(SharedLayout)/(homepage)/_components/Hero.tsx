@@ -5,10 +5,11 @@ import React from "react";
 
 function Hero({ t }: { t: TFunction }) {
   return (
-<div className="w-full xl:w-[1440px] h-[1200px] sm:h-[1041px] mx-auto my-0">
-  <div className="flex w-full  xl:w-[686px] flex-col gap-[64px] items-center flex-nowrap relative z-[1] mt-[236px] mx-auto">
+    <div className="w-full  bg-[url(/assets/images/hero/mainbanner.svg)] bg-cover bg-no-repeat ">
+<div className="w-full xl:w-[1440px]  pt-[236px] pb-[64px]   mx-auto my-0">
+  <div className="flex w-full  xl:w-[686px] flex-col gap-[64px] items-center flex-nowrap relative z-[1]  mx-auto">
     <div className="flex flex-col gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
-      <span className="flex w-full bukra-semi-bold xl:w-[686px] xl:h-[232px] justify-center items-start self-stretch shrink-0  text-[64px] font-bold leading-[116.48px] text-[#fff] relative text-center z-[3]">
+      <span className="flex w-full bukra-semi-bold xl:w-[686px]  justify-center items-start self-stretch shrink-0  text-[64px] font-bold leading-[116.48px] text-[#fff] relative text-center z-[3]">
 {t("hero.title")}
       </span>
       <span className="flex lg:w-[546px] h-[64px] justify-center items-start shrink-0  text-[16px] font-medium leading-[32px] text-[#f8fbfc] relative text-center z-[4]">
@@ -67,8 +68,9 @@ function Hero({ t }: { t: TFunction }) {
 
     </div>
   </div>
-  <div className="w-full xl:w-full h-[1200px] sm:h-[1041px] bg-[url(/assets/images/hero/mainbanner.svg)] bg-cover bg-no-repeat absolute top-0 left-1/2 translate-x-[-50%] translate-y-0" />
 </div>
+
+    </div>
 
   );
 }

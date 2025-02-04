@@ -14,11 +14,11 @@ export default function MenuItemsDesktop({
   console.log(locale);
   
   const menuItems = [
-    { label: "الرئيسية", href: `/`, width: "58px" },
-    { label: "المنتجات", href: `/products`, width: "55px" },
-    { label: "من نحن", href: `/about-us`, width: "44px" },
-    { label: "احسب تمويلك", href: `/calculate`, width: "87px" },
-    { label: "تواصل معنا", href: `/contact-us`, width: "69px" },
+    { key: "home", href: `${locale=="ar"?`/`:`/en`}`, width: "58px" },
+    { key: "products", href:`${locale=="ar"?`/products`:`/en/products`}` , width: "55px" },
+    { key: "about_us", href:`${locale=="ar"?`/about-us`:`/en/about-us`}` , width: "44px" },
+    { key: "calculate_finance", href:`${locale=="ar"?`/calculate`:`/en/calculate`}` , width: "87px" },
+    { key: "contact_us", href:`${locale=="ar"?`/contact-us`:`/en/contact-us`}`, width: "69px" },
   ];
   
 
@@ -35,14 +35,14 @@ export default function MenuItemsDesktop({
         key={index}
         href={item.href}
         className={cn(
-          "flex items-center justify-center shrink-0 text-[14px] font-normal leading-[16.406px] relative"
+          "flex items-center justify-center shrink-0 ltr:text-[12px] rtl:text-[14px] font-normal ltr:leading-3 rtl:leading-[16.406px] relative"
         )}
         style={{
           // width: item.width,
           height: "25px",
         }}
       >
-        {t(item.label)}
+         {t(`menu.${item.key}`)}
       </NavLink>
     ))}
     {/* <div className="w-[58px] h-[2px] bg-white absolute bottom-0 right-[24px] z-[6]" /> */}

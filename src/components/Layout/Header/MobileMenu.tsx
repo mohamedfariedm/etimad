@@ -76,11 +76,11 @@ function MobileMenu({
           >
             {/* Menu Items */}
             {[
-              { label: t("الرئيسية"), href: "/" },
-              { label: t("المنتجات"), href: "/products" },
-              { label: t("من نحن"), href: "/about" },
-              { label: t("احسب تمويلك"), href: "/calculator" },
-              { label: t("تواصل معنا"), href: "/contact" },
+              { label: t("menu.home"), href: "/" },
+              { label: t("menu.products"), href: "/products" },
+              { label: t("menu.about_us"), href: "/about" },
+              { label: t("menu.calculate_finance"), href: "/calculator" },
+              { label: t("menu.contact_us"), href: "/contact" },
             ].map((item, index) => (
               <motion.a
                 key={index}

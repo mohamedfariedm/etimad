@@ -167,7 +167,7 @@ function ComplaintsForm() {
             >
               {isPending ? t("buttons.sending") : t("buttons.submit")}
             </button>
-            <span className="flex w-full lg:w-[290px] h-[29px] justify-center items-start text-[16px] font-medium text-[#90bbbd] text-center">
+            <span className="flex w-full rtl:lg:w-[290px] rtl:h-[29px] justify-center items-start text-[16px] font-medium text-[#90bbbd] text-center">
               {t("privacy_note")}
             </span>
           </div>

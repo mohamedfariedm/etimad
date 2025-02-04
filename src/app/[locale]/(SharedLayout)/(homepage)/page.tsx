@@ -23,9 +23,9 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   const { t } = await initTranslations(locale, ["homepage"]);
 
   return (
-    <section className="min-h-screen ">
+    <section className="">
       <Hero t={t} />
-      <div className="flex flex-col gap-[136px] px-5 sm:px-0">
+      <div className="flex flex-col gap-[136px] my-[136px] px-5 sm:px-0">
       <EasyWay t={t}/>
       <Products t={t}/>
       <Calculate />

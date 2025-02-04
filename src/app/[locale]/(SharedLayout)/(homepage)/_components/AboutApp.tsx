@@ -6,7 +6,7 @@ import React from "react";
 function AboutApp({ t }: { t: TFunction }) {
   return (
     <div className="main-container flex w-full flex-wrap justify-center items-center xl:w-[1152px] xl:h-[954.354px] relative mx-auto my-0">
-    <div className="flex w-[323px] h-[766.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-0 xl:left-[829px] z-[18]">
+    <div className="flex w-[323px] h-[766.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-0 xl:end-[829px] z-[18]">
       <div className="flex gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[19]">
       <div className="w-[46px] h-[46px] shrink-0 bg-[url(/assets/images/aboutapp/1-1.svg)] bg-cover bg-no-repeat relative overflow-hidden z-[25]" />
         <div className="w-px h-[50px] shrink-0 bg-[url(/assets/images/aboutapp/line.svg)] bg-cover bg-no-repeat relative z-[24]" />
@@ -23,7 +23,7 @@ function AboutApp({ t }: { t: TFunction }) {
       </div>
       <div className="w-[306.975px] h-[594.354px] shrink-0 bg-[url(/assets/images/aboutapp/iPhone.svg)] bg-cover bg-no-repeat relative z-[26]" />
     </div>
-    <div className="flex w-[323px] h-[776.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-[71px] xl:left-[414.5px] z-[9]">
+    <div className="flex w-[323px] h-[776.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-[71px] xl:end-[414.5px] z-[9]">
       <div className="flex gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-10">
       <div className="w-[46px] h-[46px] shrink-0 bg-[url(/assets/images/aboutapp/2-2.svg)] bg-cover bg-no-repeat relative overflow-hidden z-[16]" />
         <div className="w-px h-[50px] shrink-0 bg-[url(/assets/images/aboutapp/line.svg)] bg-cover bg-no-repeat relative z-[15]" />
@@ -40,7 +40,7 @@ function AboutApp({ t }: { t: TFunction }) {
       </div>
       <div className="w-[306.975px] h-[594.354px] shrink-0 bg-[url(/assets/images/aboutapp/iPhone1.svg)] bg-cover bg-no-repeat relative z-[17]" />
     </div>
-    <div className="flex w-[323px] h-[778.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-[176px] xl:left-0">
+    <div className="flex w-[323px] h-[778.354px] flex-col gap-[48px] items-center flex-nowrap xl:absolute xl:top-[176px] xl:end-0">
       <div className="flex gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[1]">
       <div className="w-[46px] h-[46px] shrink-0 bg-[url(/assets/images/aboutapp/3-3.svg)] bg-cover bg-no-repeat relative overflow-hidden z-[7]" />
         <div className="w-px h-[50px] shrink-0 bg-[url(/assets/images/aboutapp/line.svg)] bg-cover bg-no-repeat relative z-[6]" />

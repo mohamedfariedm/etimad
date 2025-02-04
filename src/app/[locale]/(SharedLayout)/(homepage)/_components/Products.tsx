@@ -50,7 +50,7 @@ function Products({ t }: { t: TFunction }) {
           className="w-[176px] h-[3px] shrink-0 bg-cover bg-no-repeat rounded-[4px] relative z-[1]"
           style={{ backgroundImage: "url(/assets/images/eassyway/line.svg)" }}
         />
-        <span className="flex bukra-semi-bold w-[227px] h-[58px] justify-center items-start shrink-0 basis-auto text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center whitespace-nowrap z-[2]">
+        <span className="flex bukra-semi-bold rtl:w-[227px] h-[58px] justify-center items-start shrink-0 basis-auto text-[32px] font-semibold leading-[57.6px] text-[#5d9d9f] relative text-center whitespace-nowrap z-[2]">
           {t("products.title")}
         </span>
         <div
