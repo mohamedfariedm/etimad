@@ -1,5 +1,6 @@
 {
-    "breadcrumb": "Products",
+  "home": "Home",
+  "breadCrumb": "Products",
     "buttons": {
       "beauty": "Beauty",
       "recruitment": "Recruitment",

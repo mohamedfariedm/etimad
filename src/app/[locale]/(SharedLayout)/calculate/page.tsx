@@ -4,11 +4,11 @@ import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
 import { Calculate} from "../(homepage)/_components";
 
 async function page({ params: { locale } }: { params: { locale: string } }) {
-  const { t } = await initTranslations(locale, ["contactUs"]);
+  const { t } = await initTranslations(locale, ["calculate"]);
 
   return (
 <>
-<BreadCrumbComponent/>
+<BreadCrumbComponent t={t}/>
 <Calculate/>
 </>
   );

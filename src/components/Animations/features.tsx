@@ -30,7 +30,7 @@ import { useTranslation } from "react-i18next";
   ];
   return (
     <>
-      <BreadCrumbComponent />
+      <BreadCrumbComponent t={t} />
       <div className="main-container xl:w-[1152px] xl:h-[954px] relative mx-auto my-0">
 
 

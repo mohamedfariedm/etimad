@@ -7,7 +7,7 @@ async function page({ params: { locale } }: { params: { locale: string } }) {
 
   return (
     <>
-      <BreadCrumbComponent />
+      <BreadCrumbComponent t={t} />
       <div className="main-container flex w-full xl:w-[1152px] flex-col gap-[96px] items-center flex-nowrap relative mx-auto my-0">
         <div className="flex w-full xl:w-[662px] flex-col gap-[64px] items-center shrink-0 flex-nowrap relative my-2">
           <div className="flex flex-col gap-[64px] items-start self-stretch shrink-0 flex-nowrap relative z-[1]">

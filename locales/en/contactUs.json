@@ -1,4 +1,6 @@
 {
+  "home": "Home",
+  "breadCrumb": "Contact Us",
   "form": {
     "firstName": "First Name",
     "firstNamePlaceholder": "Enter your first name",

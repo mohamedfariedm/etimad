@@ -47,7 +47,9 @@ async function page({
 
   return (<>
   
-  <BreadCrumbComponent/>
+  <BreadCrumbComponent t={
+    t
+  }/>
   
   <Products t={t}/>
   

@@ -1,4 +1,6 @@
 {
+  "home": "الرئيسية",
+  "breadCrumb": "تواصل معنا",
   "form": {
     "firstName": "الاسم الأول",
     "firstNamePlaceholder": "أدخل اسمك الأول",

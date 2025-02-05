@@ -8,7 +8,7 @@ async function page({ params: { locale } }: { params: { locale: string } }) {
 
   return (
 <>
-<BreadCrumbComponent/>
+<BreadCrumbComponent t={t}/>
 <MissionAndVision t={t}/>
 </>
   );

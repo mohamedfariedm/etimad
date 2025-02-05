@@ -16,7 +16,7 @@ async function Complaints
 
   return (
     <>
-<BreadCrumbComponent/>
+<BreadCrumbComponent t={t}/>
     
     <div className="main-container flex w-full xl:w-[1148px] flex-col gap-[64px] items-center flex-nowrap relative mx-auto my-0">
       <div className="flex w-full xl:w-[790px] flex-col gap-[16px] items-center shrink-0 flex-nowrap relative">
