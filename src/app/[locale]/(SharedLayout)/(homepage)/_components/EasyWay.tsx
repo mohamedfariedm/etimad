@@ -23,7 +23,7 @@ function EasyWay({ t }: { t: TFunction }) {
           {t("easyWay.description")}
         </span>
       </div>
-      <div className="flex justify-between items-center self-stretch shrink-0 flex-wrap xl:flex-nowrap relative z-[6]">
+      <div className="flex w-full justify-center gap-y-10 xl:justify-between items-center self-stretch shrink-0 flex-wrap xl:flex-nowrap relative z-[6]">
         {["fast", "secure", "easy"].map((item, index) => (
           <div key={index} className="w-[368px] h-[101px] shrink-0 relative z-[7]">
             <div className="w-[336px] h-[101px] bg-[#f8fbfc] rounded-[16px] absolute top-0 end-0 z-[8]" />

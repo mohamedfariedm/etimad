@@ -59,8 +59,8 @@ function Faq() {
             key={index}
             className={`flex transition-all duration-1000 ease-in-out ${
               activeButtons.includes(index)
-                ? "w-[564px] flex-col gap-[40px] h-auto"
-                : "w-[564px] flex-row gap-[72px] h-[auto]"
+                ? "w-full lg:w-[564px] flex-col gap-[40px] h-auto"
+                : "w-full lg:w-[564px] flex-row gap-[72px] h-[auto]"
             } pt-[16px] pr-[32px] pb-[16px] pl-[32px] justify-between items-center flex-nowrap bg-[#f8fbfc] rounded-[16px] border-none relative z-[2] pointer`}
             onClick={() => toggleDropdown(index)}
           >
@@ -87,7 +87,7 @@ function Faq() {
                 <span
                   className={
                     activeButtons.includes(index)
-                      ? "flex w-[500px] h-[130px] items-end self-stretch shrink-0 text-[14px] font-normal leading-[25.48px] text-[#90bbbd] tracking-[0.28px] relative text-start z-[3] transition-all duration-500 ease-in-out opacity-100"
+                      ? "flex w-full lg:w-[500px] h-[130px] items-end self-stretch shrink-0 text-[14px] font-normal leading-[25.48px] text-[#90bbbd] tracking-[0.28px] relative text-start z-[3] transition-all duration-500 ease-in-out opacity-100"
                       : "h-[0px] opacity-0 transition-all duration-500 ease-in-out"
                   }
                 >
